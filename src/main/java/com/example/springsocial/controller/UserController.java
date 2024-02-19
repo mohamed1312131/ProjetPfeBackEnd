@@ -22,4 +22,27 @@ public class UserController {
                 .orElseThrow(() -> new ResourceNotFoundException("User", "id", userPrincipal.getId()));
     }
 
+    public static double calculerMoyenne(int[] tableau) {
+
+  // Vérifier si le tableau est vide
+  if (tableau.length == 0) {
+    throw new IllegalArgumentException("Le tableau est vide");
+  }
+
+  // Initialiser la somme des éléments
+  double somme = 0;
+
+  // Parcourir chaque élément du tableau et l'ajouter à la somme
+  for (int element : tableau) {
+    somme += element;
+  }
+
+  // Calculer la moyenne en divisant la somme par la longueur du tableau
+  double moyenne = somme / tableau.length;
+
+  // Retourner la moyenne
+  return moyenne;
+}
+
+
 }
